@@ -1,5 +1,11 @@
 #include<vector>
 #include<cassert>
+#include<ostream>
+
+template<typename T>
+class Stack;
+template<typename T>
+std::ostream& operator<<(std::ofstream&os,Stack<T> const& stack);
 
 template <typename T>
 class Stack{
@@ -20,6 +26,7 @@ public:
   void Pop();
   T const& Top() const;
   bool Empty() const;  
+  friend std::ostream& operator<<<T> (std::ostream&os,Stack<T> const& stack);
 };
 
 template <typename T>
