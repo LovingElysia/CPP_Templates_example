@@ -2,11 +2,6 @@
 #include<cassert>
 #include<ostream>
 
-template<typename T,typename Cont = std::vector<T>>
-class Stack;
-template<typename T>
-std::ostream& operator<<(std::ofstream&os,Stack<T> const& stack);
-
 template <typename T,typename Cont = std::vector<T>>
 class Stack{
 private:
@@ -26,7 +21,6 @@ public:
   void Pop();
   T const& Top() const;
   bool Empty() const;  
-  friend std::ostream& operator<<<T> (std::ostream&os,Stack<T> const& stack);
 };
 
 //每一个成员函数都必须含有这两个类型参数
