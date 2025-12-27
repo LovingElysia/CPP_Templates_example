@@ -29,6 +29,7 @@ void Stack<T>::Push(T elem){
 
 template <typename T>
 void Stack<T>::Pop(){
+    assert(!Empty());
     elems.pop_back();
 }
 
