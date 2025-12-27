@@ -49,3 +49,8 @@ Stack<T>& Stack<T>::operator=(Stack const& other){
     elems = other.elems;
     return *this;
 }
+
+template <typename T>
+bool Stack<T>::Empty() const{
+    return elems.empty();
+}
