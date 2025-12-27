@@ -47,9 +47,7 @@ T const& Stack<T>::Top()const{
 }
 
 template<typename T>
-Stack<T>::Stack(Stack const& other){
-    elems.emplace_back(other.elems);
-}
+Stack<T>::Stack(Stack const& other):elems(other.elems){}
 
 template<typename T>
 Stack<T>& Stack<T>::operator=(Stack const& other){

@@ -8,10 +8,15 @@ class Stack<std::string>{
 private:
     std::deque<std::string> elems;
 public:
+    Stack() = default;
+    Stack(Stack const& other);
+    Stack& operator=(Stack const& other);
+    ~Stack() = default;
     void Push(std::string const&);
     std::string const& Top()const;
     void Pop();
     bool Empty() const;
+    friend std::ostream& operator<<(std::ostream&os,Stack<std::string> const& stack);
 };
 
 void Stack<std::string>::Push(std::string const& elem){
@@ -30,4 +35,12 @@ void Stack<std::string>::Pop(){
 
 bool Stack<std::string>::Empty() const{
     return elems.empty();
+}
+
+Stack<std::string>::Stack(Stack const& other):elems(other.elems){}
+
+
+Stack<std::string>& Stack<std::string>::operator=(Stack const& other){
+    elems = other.elems;
+    return *this;
 }
