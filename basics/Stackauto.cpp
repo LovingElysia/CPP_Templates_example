@@ -1,5 +1,5 @@
 #include<iostream>
-#include"Stacknotype.hpp"
+#include"Stackauto.hpp"
 #include<type_traits>
 
 int main()
