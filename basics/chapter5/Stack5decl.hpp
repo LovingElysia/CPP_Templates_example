@@ -55,8 +55,8 @@ Stack<T>& Stack<T>::operator=(Stack<T2> const& other){
     Stack<T2> tmp(other);
     clear();
     while(!other.empty()){
-        elems.emplace_back(other.Top());
-        other.Pop();
+        elems.emplace_back(tmp.Top());
+        tmp.Pop();
     }
     return *this;
 }    
