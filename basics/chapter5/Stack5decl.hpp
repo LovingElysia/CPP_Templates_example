@@ -58,5 +58,5 @@ Stack<T>& Stack<T>::operator=(Stack<T2> const& other){
         elems.emplace_back(other.Top());
         other.Pop();
     }
-    
+    return *this;
 }    
